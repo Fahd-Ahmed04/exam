@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اختبار مادة البيئات الافتراضية</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- صفحة تسجيل الدخول -->
+    <div id="login-page" class="page active">
+      <div class="container">
+        <header class="header">
+          <h1>
+            <i class="fas fa-graduation-cap"></i> اختبار مادة البيئات الافتراضية
+          </h1>
+          <p class="subtitle">
+            اختبر معلوماتك في مادة البيئات الافتراضية - الفرقة الرابعة تكنولوجيا
+            التعليم
+          </p>
+        </header>
+
+        <div class="login-box">
+          <h2><i class="fas fa-sign-in-alt"></i> تسجيل الدخول للاختبار</h2>
+
+          <div class="video-link-section">
+            <a href="video.html" class="video-link-btn" target="_blank">
+              <i class="fas fa-video"></i> مشاهدة الفيديو التعليمي قبل البدء
+            </a>
+          </div>
+
+          <div class="form-group">
+            <label for="username"
+              ><i class="fas fa-user"></i> الاسم الثلاثي</label
+            >
+            <input
+              type="text"
+              id="username"
+              placeholder="أدخل اسمك الثلاثي"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email"
+              ><i class="fas fa-envelope"></i> البريد الإلكتروني</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="example@domain.com"
+              required
+            />
+          </div>
+
+          <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> تعليمات مهمة:</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i> الاختبار يحتوي على 10 أسئلة متنوعة
+              </li>
+              <li>
+                <i class="fas fa-check"></i> يجب الإجابة على جميع الأسئلة قبل
+                التصحيح
+              </li>
+              <li>
+                <i class="fas fa-check"></i> يمكنك مراجعة إجاباتك قبل التسليم
+              </li>
+              <li><i class="fas fa-check"></i> سيتم حفظ تقدمك تلقائياً</li>
+            </ul>
+          </div>
+
+          <button id="start-btn" class="btn btn-primary">
+            <i class="fas fa-play"></i> بدء الاختبار
+          </button>
+
+          <div class="team-section">
+            <h3><i class="fas fa-users"></i> الفريق القائم على المشروع</h3>
+            <div class="team-members">
+              <span>عماد جرجس مرزوق</span>
+              <span>علياء عماد صلاح</span>
+              <span>مكاريوس رضا يوسف</span>
+              <span>طه عبدالله متولي سالم</span>
+              <span>الهام علي عبد المجيد</span>
+              <span>عماد جرجس مرزوق</span>
+              <span>NO Name</span>
+              <span>NO Name</span>
+              <span>NO Name</span>
+              <span>NO Name</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- صفحة الاختبار -->
+    <div id="quiz-page" class="page">
+      <div class="container">
+        <header class="quiz-header">
+          <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+            <div>
+              <span id="current-user">المستخدم</span>
+              <span id="current-email" class="email">email@example.com</span>
+            </div>
+          </div>
+
+          <div class="progress-info">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span id="progress-text">0/10</span>
+          </div>
+
+          <button id="logout-btn" class="btn btn-secondary">
+            <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+          </button>
+        </header>
+
+        <div id="questions-container" class="questions-container">
+          <!-- الأسئلة سيتم إضافتها بواسطة JavaScript -->
+        </div>
+
+        <footer class="quiz-footer">
+          <button id="submit-btn" class="btn btn-primary" disabled>
+            <i class="fas fa-paper-plane"></i> تصحيح الإجابات (0/10)
+          </button>
+          <p class="hint">
+            <i class="fas fa-lightbulb"></i> سيتم حفظ إجاباتك تلقائياً
+          </p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- صفحة النتائج -->
+    <div id="result-page" class="page">
+      <div class="container">
+        <header class="result-header">
+          <h1><i class="fas fa-chart-line"></i> نتائج الاختبار</h1>
+        </header>
+
+        <div class="result-content">
+          <div class="score-card">
+            <div class="score-circle">
+              <span id="score-number">0</span>
+              <span class="total">/10</span>
+            </div>
+            <div class="score-details">
+              <h3 id="score-percentage">0%</h3>
+              <p id="score-message">يحتاج تحسين</p>
+            </div>
+          </div>
+
+          <div class="user-details">
+            <div class="detail-item">
+              <i class="fas fa-user"></i>
+              <div>
+                <span class="label">الاسم</span>
+                <span id="result-user" class="value">-</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-calendar"></i>
+              <div>
+                <span class="label">تاريخ الاختبار</span>
+                <span id="result-date" class="value">-</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <span class="label">الوقت</span>
+                <span id="result-time" class="value">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button id="review-btn" class="btn btn-primary">
+              <i class="fas fa-list-check"></i> مراجعة الإجابات
+            </button>
+            <button id="restart-btn" class="btn btn-secondary">
+              <i class="fas fa-redo"></i> إعادة الاختبار
+            </button>
+            <button id="home-btn" class="btn btn-secondary">
+              <i class="fas fa-home"></i> الرجوع للرئيسية
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- صفحة مراجعة الإجابات -->
+    <div id="review-page" class="page">
+      <div class="container">
+        <header class="review-header">
+          <h1><i class="fas fa-check-circle"></i> مراجعة الإجابات</h1>
+          <button id="back-to-results" class="btn btn-secondary">
+            <i class="fas fa-arrow-right"></i> العودة للنتائج
+          </button>
+        </header>
+
+        <div id="review-container" class="review-container">
+          <!-- مراجعة الإجابات سيتم إضافتها بواسطة JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
